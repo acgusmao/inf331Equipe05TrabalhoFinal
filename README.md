@@ -194,3 +194,146 @@ Convencional: O cliente escolhe um produto, depois um fornecedor baseado numa li
 <br/>Control \Safe\Data
 <br/>Interface provida : IDataSafe
 <br/>Interface requerida: ITransaction
+
+## Diagrama de Classes das Interfaces
+
+![DiagramaDeClassesInterfaces](https://github.com/acgusmao/inf331Equipe05TrabalhoFinal/blob/master/images/DiagramaClasseDasInterface.png?raw=true)
+
+## Estrutura JSON Interfaces
+
+~~~json
+"ICliente":
+{
+	"cpf": "233.548.144-21",
+	"ICrud": {
+		"command": 1,
+		"operation": 3,
+		"status": 0
+	},
+	"IUser": {
+		"name": "Pedro Henrique", 
+		"adrress": "Rua Alvorada",
+		"fone": "(11)9999-2164",
+		"userType": 2,
+		"ILogin": {
+			"username": "Pedro123",
+			"password": "********"
+		}
+	},
+	"IData": 
+	{
+		"objectID": 652345324564356,
+		"data": "data"
+	}	
+}
+
+"IFornecedor":
+{
+	"cnpj": "1234.123345.124445.1",	
+	"ICrud": {
+		"command": 1,
+		"operation": 3,
+		"status": 0
+	},
+	"IUser": {
+		"name": "Pedro Henrique", 
+		"adrress": "Rua Alvorada",
+		"fone": "(11)9999-2164",
+		"userType": 2,
+		"ILogin": {
+			"username": "Pedro123",
+			"password": "********"
+		}
+	},
+	"IData": {
+		"objectID": 652345324564356,
+		"data": "data"
+	},
+	"IProdutoLeilao": {
+		"fornecedor": "IFornecedor",
+		"value": 15000.00,
+		"IPedido": {
+			"cliente": "ICliente",
+			"produto": "IProduto",
+			"leilaoId": 1,
+			"IData": {
+				"objectID": 652345324564356,
+				"data": "data"
+			}
+		}
+	}	
+}
+
+"IProduto": 
+{
+	"name": "Smart TV LG 42",
+	"description": "Tela Led",
+	"price": 2300.00,
+	"quantity": 200,
+	"ICrud": {
+		"command": 1,
+		"operation": 3,
+		"status": 0
+	},
+	"IData": {
+		"objectID": 652345324564356,
+		"data": "data"
+	}
+}
+
+
+"ICart": 
+{
+	"prodList": ["Produto 1", "Produto 2", "Produto 3", "Produto 4",  "Produto 5"],
+	"cliente": "ICliente",
+	"IData": {
+		"objectID": 652345324564356,
+		"data": "data"
+	}
+}
+
+"IKey":
+{
+	"acess": 1,
+	"user": "IUser",
+	"keypass": 5679799090,	
+	"IDataSafe": {
+		"cryptoType": 345543,
+		"key": 1000001,
+		"IData": {
+			"objectID": 652345324564356,
+			"data": "data"
+		}
+	}
+}
+
+"IDataSafe": 
+{
+	"cryptoType": 345543,
+	"key": 1000001,
+	"IData": {
+		"objectID": 652345324564356,
+		"data": "data"
+	}
+}
+
+"ITransaction":
+{
+	"cartList": ["cart 1", "cart 2", "cart 3", "cart 4",  "cart 5"],
+	"IData": {
+		"objectID": 652345324564356,
+		"data": "data"
+	}
+}
+
+"IPedido": 
+{
+	"cliente": "ICliente",
+	"produto": "IProduto",
+	"leilaoId": 1,
+	"IData": {
+		"objectID": 652345324564356,
+		"data": "data"
+	}
+}
+~~~
