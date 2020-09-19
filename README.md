@@ -69,41 +69,41 @@ Convencional: O cliente escolhe um produto, depois um fornecedor baseado numa li
 <br/>Interface requerida: ICliente
  
 * Componente FormulárioCadastroFornecedor – Componente da view onde é possível o usuário o acesso para operações de create, retrieve, update e delete para fornecedores. Assinaturas deste componente no barramento:
-View\Fornecedor\get\{id}
-View\Fornecedor \post\{id}
-View\Fornecedor \put\{id}
-View\Fornecedor \delete\{id}
-Interface provida : IFornecedor
-Interface requerida: IFornecedor
+<br/>View\Fornecedor\get\{id}
+<br/>View\Fornecedor \post\{id}
+<br/>View\Fornecedor \put\{id}
+<br/>View\Fornecedor \delete\{id}
+<br/>Interface provida : IFornecedor
+<br/>Interface requerida: IFornecedor
   
 * Componente FormulárioCadastroProdutos – Componente da view onde é possível o usuário o acesso para operações de create, retrieve, update e delete para fornecedores. Assinaturas deste componente no barramento:
-View\Produto\get\{id}
-View\Produto\post\{id}
-View\Produto\put\{id}
-View\Produto\delete\{id}
-Interface provida : IProduto
-Interface requerida: IProduto
+<br/>View\Produto\get\{id}
+<br/>View\Produto\post\{id}
+<br/>View\Produto\put\{id}
+<br/>View\Produto\delete\{id}
+<br/>Interface provida : IProduto
+<br/>Interface requerida: IProduto
  
 * Componente FormulárioHistóricoVendas – Componente da view onde é possível o fornecedor o acesso ao histórico de vendas. Assinaturas deste componente no barramento:
-View\Fornecedor\{id}\historicoVendas\Lista
-Interface provida : Lista
-Interface requerida: IFornecedor
+<br/>View\Fornecedor\{id}\historicoVendas\Lista
+<br/>Interface provida : Lista
+<br/>Interface requerida: IFornecedor
  
 * Componente FormulárioProduto – Componente da view para visualizar um determinado produto e adicionar no carrinho. Assinaturas deste componente no barramento:
-View\Produto\post\{id}\Cart
-View\Produto\delete\{id}\Cart
-Interface provida : IProduto
-Interface requerida: IProduto
+<br/>View\Produto\post\{id}\Cart
+<br/>View\Produto\delete\{id}\Cart
+<br/>Interface provida : IProduto
+<br/>Interface requerida: IProduto
  
 *  Componente FormulárioCarrinho – Componente da view para visualizar o carrinho de compra, adicionar ou remover produtos. Assinaturas deste componente no barramento:
-View\Cliente\{id}\Cart\Comprar
-Interface provida : ICart
-Interface requerida: IProduto
+<br/>View\Cliente\{id}\Cart\Comprar
+<br/>Interface provida : ICart
+<br/>Interface requerida: IProduto
  
 * Componente FormuláriodeLogin – Componente da view para realizar a autenticação dos usuarios. Assinaturas deste componente no barramento:
-View\Login\User\{id}
-Interface provida : IKey
-Interface requerida: IUser
+<br/>View\Login\User\{id}
+<br/>Interface provida : IKey
+<br/>Interface requerida: IUser
  
 * Componente FormulárioInicioLeilão – Componente da view para realizar o inicio do leilão invertido. Assinaturas deste componente no barramento:
 <br/>View\Leilao\Produto\{id}\Pedido
@@ -111,86 +111,86 @@ Interface requerida: IUser
 <br/>Interface requerida: IProduto
  
 * Componente Leilão – Componente de controle para realizar os procedimentos de realização do leilão invertido. Assinaturas deste componente no barramento:
-View\Leilao\Produto\{id}\Lance
-Interface provida : IProdutoLeilao
-Interface requerida: IPedido
+<br/>View\Leilao\Produto\{id}\Lance
+<br/>Interface provida : IProdutoLeilao
+<br/>Interface requerida: IPedido
  
 * Componente SeleçãodosFornecedores – Componente de controle para selecionar o menores lances dos fornecedores do leilão invertido. Assinaturas deste componente no barramento:
-View\Leilao\Produto\{id}\ListaDeFornecedores
-Leilao/Lista/Produto/fornecedor1+fornecedor2+fornecedor3
-Interface provida : ListaFornedores
- Interface requerida: IFornecedor
+<br/>View\Leilao\Produto\{id}\ListaDeFornecedores
+<br/>Leilao/Lista/Produto/fornecedor1+fornecedor2+fornecedor3
+<br/>Interface provida : ListaFornedores
+<br/>Interface requerida: IFornecedor
  
 * Componente FormulárioBuscarProdutos – Componente da view que realiza a busca de produtos. Assinaturas deste componente no barramento:
-View/Buscar/Produto/
-Interface provida : ListaProdutos
-Interface requerida: IProduto
+<br/>View/Buscar/Produto/
+<br/>Interface provida : ListaProdutos
+<br/>Interface requerida: IProduto
  
 * Componente FornecedorCRUD – Componente de controle onde é realizada as operações de create, retrieve, update e delete para fornecedores. Assinaturas deste componente no barramento:
-Control\Fornecedor\get\{id}
-Control\ Fornecedor \post\{id}
-Control\ Fornecedor \put\{id}
-Control\ Fornecedor \delete\{id}
-Control\Fornecedor\post\{id}\Leilao\{LeilaoId}\Produto\{ProdutoId}
-Interface provida : ICliente
-Interface requerida: ICliente
-Interface provida : IProdutoLeilao
-Interface requerida: IProdutoLeilao
+<br/>Control\ Fornecedor \post\{id}
+<br/>Control\ Fornecedor \put\{id}
+<br/>Control\ Fornecedor \delete\{id}
+<br/>Control\Fornecedor\post\{id}\Leilao\{LeilaoId}\Produto\{ProdutoId}
+<br/>Control\Fornecedor\get\{id}
+<br/>Interface provida : ICliente
+<br/>Interface requerida: ICliente
+<br/>Interface provida : IProdutoLeilao
+<br/>Interface requerida: IProdutoLeilao
  
 * Componente ClienteCRUD – Componente de controle onde é realizada as operações de create, retrieve, update e delete para clientes. Assinaturas deste componente no barramento:
-Control\Cliente\get\{id}
-Control\Cliente\post\{id}
-Control\Cliente\put\{id}
-Control\Cliente\delete\{id}
-Interface provida : ICliente
-Interface requerida: ICliente
+<br/>Control\Cliente\get\{id}
+<br/>Control\Cliente\post\{id}
+<br/>Control\Cliente\put\{id}
+<br/>Control\Cliente\delete\{id}
+<br/>Interface provida : ICliente
+<br/>Interface requerida: ICliente
  
 * Componente ProdutoCRUD – Componente de controle onde é realizada as operações de create, retrieve, update e delete para produtos. Assinaturas deste componente no barramento:
-Control\Produto\get\{id}
-Control\Produto \post\{id}
-Control\Produto \put\{id}
-Control\Produto \delete\{id}
-Interface provida : IProduto
-Interface requerida: IProduto
+<br/>Control\Produto\get\{id}
+<br/>Control\Produto \post\{id}
+<br/>Control\Produto \put\{id}
+<br/>Control\Produto \delete\{id}
+<br/>Interface provida : IProduto
+<br/>Interface requerida: IProduto
  
 * Componente HistóricodeVendas – Componente de controle que realiza a busca do histórico de vendas para um determinando fornecedor. Assinaturas deste componente no barramento:
-Control \Historico\Vendas\Fornecedor\{id}
-Interface provida : Lista
-Interface requerida: IFornecedor
+<br/>Control \Historico\Vendas\Fornecedor\{id}
+<br/>Interface provida : Lista
+<br/>Interface requerida: IFornecedor
 
 * Componente FormulárioEscolhaFornecedor – View onde o cliente escolhe um fornecedor entre os retornados pelo leila e adiciona o produto no carrinho. Assinaturas desta componente no barramento:
-Leilao/Lista/Produto/fornecedor1+fornecedor2+fornecedor3
-View/Cart/{produtoId}
-Interface provida : IProduto
-Interface requerida: LIstaFornecedores
+<br/>Leilao/Lista/Produto/fornecedor1+fornecedor2+fornecedor3
+<br/>View/Cart/{produtoId}
+<br/>Interface provida : IProduto
+<br/>Interface requerida: LIstaFornecedores
 
  
 * Componente HistóricodeOperações – Componente de controle que realiza a busca do histórico de operações para um determinando usuario. Assinaturas deste componente no barramento:
-Control \Historico\Operacoes\Fornecedor\{id}
-Interface provida : Lista
-Interface requerida: IFornecedor
+<br/>Control \Historico\Operacoes\Fornecedor\{id}
+<br/>Interface provida : Lista
+<br/>Interface requerida: IFornecedor
  
 * Componente ComprarProduto – Componente de controle que realiza o processo de compra para um determinada produto. Assinaturas deste componente no barramento:
-Control \Compra\Cart\Finalizado
-Interface provida : ITransaction
-Interface requerida: ICart
+<br/>Control \Compra\Cart\Finalizado
+<br/>Interface provida : ITransaction
+<br/>Interface requerida: ICart
  
 * Componente RecomendarFornecedor – Componente de controle que realiza o processo de recomendação do fornecedor. Assinaturas deste componente no barramento:
-Sem Assinatura no barramento
-Interface provida :
-Interface requerida: IFornecedor
+<br/>Sem Assinatura no barramento
+<br/>Interface provida :
+<br/>Interface requerida: IFornecedor
  
 * Componente LogindeUsuários – Componente de controle que realiza o processo de autenticação dos usuarios. Assinaturas deste componente no barramento:
-Control \Login\Usuario\{id}
-Interface provida : Ikey
-Interface requerida: IUser
+<br/>Control \Login\Usuario\{id}
+<br/>Interface provida : Ikey
+<br/>Interface requerida: IUser
  
 * Componente ProtocolodePrivacidade - Componente de controle que realiza o processo de criptografia dos dados pessoais. Assinaturas deste componente no barramento:
-Control \Privacidade\Data
-Interface provida : IDataSafe
-Interface requerida: IData
+<br/>Control \Privacidade\Data
+<br/>Interface provida : IDataSafe
+<br/>Interface requerida: IData
  
 * Componente TransaçõesFinanceirasSeguras - Componente de controle que realiza o processo de segurança nas operações financeiras. Assinaturas deste componente no barramento:
-Control \Safe\Data
-Interface provida : IDataSafe
-Interface requerida: ITransaction
+<br/>Control \Safe\Data
+<br/>Interface provida : IDataSafe
+<br/>Interface requerida: ITransaction
