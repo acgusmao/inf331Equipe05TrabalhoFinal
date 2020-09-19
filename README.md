@@ -13,7 +13,7 @@
 Baseado no tema “Gerenciamento de Fornecedores em MarketPlace”, elaboramos uma modelagem baseadas em componentes, pensando nas principais funcionalidades do sistema, e em uma mecânica de vendas como um "leilão invertido". Na etapa dois, detalhamos subcomponentes da etapa de compra.
 
 ## Diagrama Nível 1
-![DiagramaNivel1]https://github.com/acgusmao/inf331Equipe05TrabalhoFinal/blob/master/images/DiagramaNivel1.png?raw=true
+![DiagramaNivel1](https://github.com/acgusmao/inf331Equipe05TrabalhoFinal/blob/master/images/DiagramaNivel1.png?raw=true)
 
 ## Descrição dos processos
 
@@ -39,4 +39,4 @@ Convencional: O cliente escolhe um produto, depois um fornecedor baseado numa li
 * Por fim, o componente Protocolo de Privacidade recebe essa transação financeira criptograda através da interface IDataSafe e realiza a comunição com a empresa responsável pelo pagamento, se encarregando de finalizar as operações financeiras de toda a operação de compra. Após a finalização da operação, é gerada uma string com as informações relevantes da transação que é postada no barramento com o tópico Control/Transaction/{id]/Finished pela interface IData.
 
 ## Diagrama Nível 2
-![DiagramaNivel2]https://github.com/acgusmao/inf331Equipe05TrabalhoFinal/blob/master/images/DiagramaNivel2.png?raw=true
+![DiagramaNivel2](https://github.com/acgusmao/inf331Equipe05TrabalhoFinal/blob/master/images/DiagramaNivel2.png?raw=true)
