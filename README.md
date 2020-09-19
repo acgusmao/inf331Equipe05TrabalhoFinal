@@ -40,3 +40,20 @@ Convencional: O cliente escolhe um produto, depois um fornecedor baseado numa li
 
 ## Diagrama Nível 2
 ![DiagramaNivel2](https://github.com/acgusmao/inf331Equipe05TrabalhoFinal/blob/master/images/DiagramaNivel2.png?raw=true)
+
+## Descrição do Componente Comprar Produto
+
+* O componente Comprar Produto assina no barramento mensagens de tópico “Control/Compra/Cart/Finalizado” através da interface ICart.
+* A interface ICart se encarrega de entregar ao componente Comprar Produto um carrinho de compras contendo uma lista de produtos, bem como os dados do usuário do marketplace que está efetuando a compra.
+* Dentro do componente Comprar Produto os dados chegam até o subcomponente GerenciaCompra que é o responsável por organizar a comunicação entre os outros subcomponentes
+* Os dados que vieram do subcomponente Escolha Método de Envio dentro do componente Formulário Compra (View) são enviados juntamente com os dados do carrinho fornecidos pela ICart até o subcomponente Método de Envio que os organizará para que sejam parte da transação financeira que será formada nesse componente.
+* De posse do método de envio, o subcomponente Taxa de Entrega, vai através da interface Gerenciar Taxa de Entrega organizar as informações já existentes a respeito desse tópico, bem como preparar a mensagem para cálculo do frete.
+* A interface ConsultaTaxaPorCep envia uma mensagem para a API dos Correios a fim de obter subsídios para o cálculo do frete para envio do carrinho recém montado para o endereço cadastrado pelo cliente.
+* Também é verificado se os produtos constantes no carrinho ainda se encontram disponíveis com o fornecedor escolhido. Para tal, é utilizado o componente ConsultaDeEstoque que se comunica com o componente GerenciaCompra através da interface Verifica Estoque.
+* Como essa consulta necessita ser feita diretamente com o fornecedor de cada um produtos, a interface Consulta Estoque do Lojista posta uma mensagem com a assinatura estoque/{idFornecedor}/{idProduto} através da interface Solicita Estoque do Lojista e assina uma mensagem com a assinatura estoque/{idFornecedor}/{idProduto}/status através da interface Recebe Estoque do Lojista.
+* Para a realização do pagamento o componente GerenciaCompra utiliza os dados provenientes do subcomponente Escolha Método de Pagamento dentro da View Formulário Compras e  os  envia para o subcomponente  FormaDePagamento para prosseguir com a montagem da transação.
+* Caso o método escolhido de pagamento seja cartão de crédito, o componente envia uma mensagem através da interface Consulta a Administradora do Cartão para saber se a transação pode prosseguir.
+* De posse de todos os dados necessários, o subcomponente GerenciaCompra os envia para o MontaTransacao através da interface Envia Dados Compra que os prepararão para serem recebidos pelo macro componente responsável pela segurança dos dados.
+* Neste ponto existem dois caminhos concomitantes:
+** Os dados da compra são enviados para o subcomponente Salva Dados Compra dentro do Model Compra através da inferface Dados Compra. Esse componente dentro da Model é responsável por persistir todos os dados da transação no banco de dados
+** Os dados da compra são enviados para o componente Transações Financeiras Seguras através da interface ITransaction onde o processo de compra dos produtos terá prosseguimento.
