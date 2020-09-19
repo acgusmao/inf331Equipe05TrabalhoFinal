@@ -55,5 +55,5 @@ Convencional: O cliente escolhe um produto, depois um fornecedor baseado numa li
 * Caso o método escolhido de pagamento seja cartão de crédito, o componente envia uma mensagem através da interface Consulta a Administradora do Cartão para saber se a transação pode prosseguir.
 * De posse de todos os dados necessários, o subcomponente GerenciaCompra os envia para o MontaTransacao através da interface Envia Dados Compra que os prepararão para serem recebidos pelo macro componente responsável pela segurança dos dados.
 * Neste ponto existem dois caminhos concomitantes:
-- Os dados da compra são enviados para o subcomponente Salva Dados Compra dentro do Model Compra através da inferface Dados Compra. Esse componente dentro da Model é responsável por persistir todos os dados da transação no banco de dados
-- Os dados da compra são enviados para o componente Transações Financeiras Seguras através da interface ITransaction onde o processo de compra dos produtos terá prosseguimento.
+	- Os dados da compra são enviados para o subcomponente Salva Dados Compra dentro do Model Compra através da inferface Dados Compra. Esse componente dentro da Model é responsável por persistir todos os dados da transação no banco de dados
+	- Os dados da compra são enviados para o componente Transações Financeiras Seguras através da interface ITransaction onde o processo de compra dos produtos terá prosseguimento.
