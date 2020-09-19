@@ -337,3 +337,12 @@ Convencional: O cliente escolhe um produto, depois um fornecedor baseado numa li
 	}
 }
 ~~~
+
+## Estrategia Multi-Plataforma
+
+O padrão de projeto adotado para resolver o problema de implementação para criação de interfaces gráficas multiplataformas, segue conforme o design Pattern Abstract Factory.
+Como estrategias todos os componentes visuais implementam a interface ViewForm e cada fabrica concreta tem a resposabilidade de criar os objetos respectivos de cada plataforma.
+O digrama de classe abaixo representa a estrategia para a solução multi-plataforma para o marketplace.
+
+![DiagramaDeClassesEstrategia](https://github.com/acgusmao/inf331Equipe05TrabalhoFinal/blob/master/images/AbstractFactory.png?raw=true)
+
