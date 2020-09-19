@@ -61,12 +61,12 @@ Convencional: O cliente escolhe um produto, depois um fornecedor baseado numa li
 ## Descrição dos componentes
 
 * Componente FormulárioCadastroCliente – Componente da view onde é possível o usuário o acesso para operações de create, retrieve, update e delete para clientes. Assinaturas deste componente no barramento:
-View\Cliente\get\{id}
-View\Cliente\post\{id}
-View\Cliente\put\{id}
-View\Cliente\delete\{id}
-Interface provida : ICliente
-Interface requerida: ICliente
+<br/>View\Cliente\get\{id}
+<br/>View\Cliente\post\{id}
+<br/>View\Cliente\put\{id}
+<br/>View\Cliente\delete\{id}
+<br/>Interface provida : ICliente
+<br/>Interface requerida: ICliente
  
 * Componente FormulárioCadastroFornecedor – Componente da view onde é possível o usuário o acesso para operações de create, retrieve, update e delete para fornecedores. Assinaturas deste componente no barramento:
 View\Fornecedor\get\{id}
@@ -106,9 +106,9 @@ Interface provida : IKey
 Interface requerida: IUser
  
 * Componente FormulárioInicioLeilão – Componente da view para realizar o inicio do leilão invertido. Assinaturas deste componente no barramento:
-View\Leilao\Produto\{id}\Pedido
-Interface provida : IPedido
-Interface requerida: IProduto
+<br/>View\Leilao\Produto\{id}\Pedido
+<br/>Interface provida : IPedido
+<br/>Interface requerida: IProduto
  
 * Componente Leilão – Componente de controle para realizar os procedimentos de realização do leilão invertido. Assinaturas deste componente no barramento:
 View\Leilao\Produto\{id}\Lance
